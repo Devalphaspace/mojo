@@ -69,6 +69,57 @@ class PrimaryButton extends StatelessWidget {
   }
 }
 
+class SecondaryButton extends StatelessWidget {
+  final String btnName;
+  final Function()? onPressed;
+  const SecondaryButton({
+    super.key,
+    required this.btnName,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        side: BorderSide(
+          color: ColorConstants().mojoPink,
+          width: 1,
+        ),
+        elevation: 0,
+        minimumSize: Size(Get.width * 0.6, 48),
+        maximumSize: Size(Get.width * 0.6, 48),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            btnName,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.inter(
+              color: ColorConstants().mojoPink,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              height: 0,
+            ),
+          ),
+          const SizedBox(width: 12),
+          SvgPicture.asset(
+            'assets/button_arrow.svg',
+            color: ColorConstants().mojoPink,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class PrimaryTextFormField extends StatefulWidget {
   final TextEditingController textEditingController;
   final String hintText;

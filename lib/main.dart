@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mojo_food_ordering_app/Screens/OnboardingScreens/onboarding_screen.dart';
 
-
 void main() {
   runApp(const Mojo());
 }

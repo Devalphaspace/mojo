@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mojo_food_ordering_app/Constants/color_constants.dart';
+import 'package:mojo_food_ordering_app/Screens/BottomNavBar/bottom_nav_bar.dart';
 import 'package:mojo_food_ordering_app/Screens/RegistrationScreen/registration_screen.dart';
 
 import '../../Shared/shared.dart';
+import '../HomeScreen/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -142,7 +144,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Spacer(),
                 PrimaryButton(
                   btnName: 'Login',
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => BottomNavBar());
+                  },
                 ),
                 const SizedBox(height: 12),
                 Text.rich(
@@ -167,7 +171,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.w600,
                           height: 0,
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () => Get.to(()=>RegistrationScreen()),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => Get.to(() => RegistrationScreen()),
                       ),
                     ],
                   ),
